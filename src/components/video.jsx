@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Video extends Component {
   render() {
     return (
-      <div>
-        TODO: Video
+      <div className="video">
+        {this.props.video.id.videoId}
       </div>
     );
   }

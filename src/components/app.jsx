@@ -26,6 +26,7 @@ class App extends Component {
   // }
 
   selectVideo = (video) => {
+    this.setState({ selected: video })
     console.log("Selected video: ", video.snippet.title);
   }
 
@@ -34,7 +35,7 @@ class App extends Component {
       <div className="ui container">
         <Search onSubmit={this.handleSearchSubmit} />
         <div className="content">
-          <SelectedVideo />
+          <SelectedVideo video={this.state.selected} />
           <Videos selectVideo={this.selectVideo} videos={this.state.videos} />
         </div>
       </div>

@@ -6,7 +6,7 @@ import SelectedVideo from "./selected_video.jsx";
 import youtube from "../api/youtube.jsx";
 
 class App extends Component {
-  state = { videos: [] };
+  state = { videos: [], selected: null };
 
   // YouTube API #1: handling requests with response
   handleSearchSubmit = (term) => {
@@ -25,13 +25,18 @@ class App extends Component {
   //   this.setState({ videos: response.data.items });
   // }
 
+  selectVideo = (video) => {
+    console.log("Selected video: ", video.snippet.title);
+  }
+
   render() {
     return (
       <div className="ui container">
         <Search onSubmit={this.handleSearchSubmit} />
-        {this.state.videos.length} videos
-        <Videos videos={this.state.videos} />
-        <SelectedVideo />
+        <div className="content">
+          <SelectedVideo />
+          <Videos selectVideo={this.selectVideo} videos={this.state.videos} />
+        </div>
       </div>
     );
   }

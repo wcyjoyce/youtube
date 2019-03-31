@@ -8,12 +8,19 @@ import youtube from "../api/youtube.jsx";
 class App extends Component {
   state = { videos: [], selected: null };
 
+  componentDidMount() {
+    this.handleSearchSubmit("React and Redux");
+  }
+
   // YouTube API #1: handling requests with response
   handleSearchSubmit = (term) => {
     youtube.get("/search", {
       params: { q: term }
     }).then((response) => {
-      this.setState({ videos: response.data.items });
+      this.setState({
+        videos: response.data.items,
+        selected: response.data.items[0] // default result once search has been rendered
+      });
     });
   };
 

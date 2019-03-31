@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const Video = (props) => {
   return (
     <div className="video" onClick={() => props.selectVideo(props.video)}>
-      <img className="thumbnail" src={props.video.snippet.thumbnails.medium.url} />
+      <img className="thumbnail" src={props.video.snippet.thumbnails.medium.url} alt={props.video.snippet.title} />
       <div className="info">
         <div className="title">{props.video.snippet.title}</div>
         <div className="channel">{props.video.snippet.channelTitle}</div>

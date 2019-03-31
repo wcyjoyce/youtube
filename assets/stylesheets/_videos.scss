@@ -1,0 +1,25 @@
+.videos {
+  height: calc(100vh - 100px);
+  width: 40%;
+  padding: 0px 5px;
+  overflow-y: scroll;
+}
+
+.video {
+  display: flex;
+  margin: 5px 0px;
+  cursor: pointer;
+
+  img {
+    max-height: 135px;
+    max-width: 220px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .info {
+    padding: 0px 5px;
+  }
+}

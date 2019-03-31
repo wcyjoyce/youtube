@@ -14,7 +14,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="search-bar">
+      <div className="search">
         <form className="ui form" onSubmit={this.handleSubmit}>
           <div className="field">
             <input
